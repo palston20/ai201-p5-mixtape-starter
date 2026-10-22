@@ -24,7 +24,7 @@ I used Claude Code (an AI coding assistant in VS Code) throughout this project, 
 
 
 ## Main Files 
-- **apnotification_service.pyry. Configures SQLite, registers the four blueprints (`/songs`, `/playlists`, `/users`, `/feed`), and creates tables. No route logic lives here.
+- **app.py** Configures SQLite, registers the four blueprints (`/songs`, `/playlists`, `/users`, `/feed`), and creates tables. No route logic lives here.
 - **models.py**: SQLAlchemy models: User, Song, Tag, Rating, ListeningEvent, Playlist, Notification. Association tables: `friendships` (user↔user), `song_tags` (song↔tag), and `playlist_entries` (playlist↔song, with `position`, `added_by`, `added_at`).
 - **routes/**: Thin HTTP layer. Each route validates JSON/query params, calls one service function, and maps `ValueError` to a 400/404.
 - **services/**: All business logic (and all five bugs):
